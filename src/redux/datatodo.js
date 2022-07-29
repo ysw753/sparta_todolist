@@ -82,7 +82,7 @@ export const updateTodoFB = (todo_id) => {
       return b.id === todo_id;
     });
 
-    dispatch(createTodo(_todo_list));
+    dispatch(completedTodo(_todo_list));
   };
 };
 export const deleteTodoFB = (todo_id) => {
@@ -96,12 +96,12 @@ export const deleteTodoFB = (todo_id) => {
     await deleteDoc(docRef);
 
     const _todo_list = getState().todo.dummy;
-    console.log(_todo_list);
+    //console.log(_todo_list);
     const todo_index = _todo_list.findIndex((b) => {
       return b.id === todo_id;
     });
 
-    dispatch(removeTodo(todo_index));
+    dispatch(removeTodo(_todo_list));
   };
 };
 

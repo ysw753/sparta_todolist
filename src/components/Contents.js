@@ -52,10 +52,10 @@ const Contents = () => {
   };
   const deleteTodo = (idx) => {
     //console.log(idx); //0
-    const updatedTodo = todos.filter((todo, i) => i == idx);
+    const updatedTodo = todos.filter((todo, i) => i === idx);
     //console.log(updatedTodo);
     // setTodos(updatedTodo);
-    dispatch(deleteTodoFB(updatedTodo[idx].id));
+    dispatch(deleteTodoFB(updatedTodo[0].id));
   };
   return (
     <MainBox>
